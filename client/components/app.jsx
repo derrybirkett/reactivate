@@ -7,16 +7,8 @@ App = React.createClass({
   // Loads items from the Tasks collection and puts them on this.data.tasks
   getMeteorData() {
     return {
-      tasks: Tasks.find({}).fetch(),
       jobs: Jobs.find({}).fetch()
     }
-  },
-
-  renderTasks() {
-    // Get tasks from this.data.tasks
-    return this.data.tasks.map((task) => {
-      return <Task key={task._id} task={task} />;
-    });
   },
 
   renderJobs() {
