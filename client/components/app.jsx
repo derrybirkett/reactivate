@@ -55,6 +55,7 @@ App = React.createClass({
   render() {
     return (
       <div className="container">
+        <RaisedButton label="Load" onClick={this.loadJobs} />
         <List subheader="New">
           {this.renderJobs()}
         </List>
