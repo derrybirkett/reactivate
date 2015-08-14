@@ -18,8 +18,9 @@ Job = React.createClass({
         title={this.props.job.title}
         primaryText={ this.props.job.title }
         leftAvatar={ <Avatar src={ this.props.job.company_logo }/> }
-        secondaryText={ this.props.job.description }
+        secondaryText={ this.props.job.type }
       />
+      
     );
   }
 });
