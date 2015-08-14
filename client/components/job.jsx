@@ -1,3 +1,10 @@
+const {
+  List,
+  ListItem,
+  ListDivider,
+  Avatar
+} = mui;
+
 // Task component - represents a single todo item
 Job = React.createClass({
   propTypes: {
@@ -7,7 +14,13 @@ Job = React.createClass({
   },
   render() {
     return (
-      <li>{this.props.job.title}</li>
+      <ListItem
+        title={this.props.job.title}
+        primaryText={ this.props.job.title }
+        leftAvatar={ <Avatar src={ this.props.job.company_logo }/> }
+        secondaryText={ this.props.job.type }
+      />
+      
     );
   }
 });

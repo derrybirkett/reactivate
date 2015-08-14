@@ -1,3 +1,13 @@
+const {
+  List,
+  ListItem,
+  ListDivider,
+  Avatar,
+  RaisedButton
+} = mui;
+
+const ThemeManager = new mui.Styles.ThemeManager();
+
 // App component - represents the whole app
 App = React.createClass({
 
@@ -9,6 +19,15 @@ App = React.createClass({
     return {
       jobs: Jobs.find({}).fetch()
     }
+  },
+
+  childContextTypes: {
+    muiTheme: React.PropTypes.object
+  },
+  getChildContext: function() {
+    return {
+      muiTheme: ThemeManager.getCurrentTheme()
+    };
   },
 
   renderJobs() {
@@ -36,14 +55,9 @@ App = React.createClass({
   render() {
     return (
       <div className="container">
-        <header>
-          <h1>List</h1>
-          <button onClick={this.loadJobs}>Load</button>
-        </header>
-
-        <ul>
+        <List subheader="New">
           {this.renderJobs()}
-        </ul>
+        </List>
       </div>
     );
   }

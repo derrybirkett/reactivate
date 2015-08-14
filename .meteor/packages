@@ -10,3 +10,8 @@ insecure
 react
 coffeescript
 http
+meteorhacks:npm
+
+
+npm-container
+cosmos:browserify
