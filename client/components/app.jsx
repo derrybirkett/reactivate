@@ -3,7 +3,9 @@ const {
   ListItem,
   ListDivider,
   Avatar,
-  RaisedButton
+  AppBar,
+  RaisedButton,
+  FlatButton
 } = mui;
 
 const ThemeManager = new mui.Styles.ThemeManager();
@@ -55,7 +57,10 @@ App = React.createClass({
   render() {
     return (
       <div className="container">
-        <RaisedButton label="Load" onClick={this.loadJobs} />
+        <AppBar
+          title="Reactivate"
+          iconClassNameRight="muidocs-icon-navigation-expand-more" />
+        <RaisedButton label="Load" onClick={this.loadJobs} primary={true} />
         <List subheader="New">
           {this.renderJobs()}
         </List>
